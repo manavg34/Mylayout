@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      redirect_to @user       #points to user_url i.e. show method
       # Handle a successful save.
     else
       render 'new'
